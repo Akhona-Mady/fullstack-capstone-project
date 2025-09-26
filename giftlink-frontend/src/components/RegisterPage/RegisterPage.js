@@ -10,14 +10,33 @@ function RegisterPage() {
 
     // Handle Register Button
     const handleRegister = async () => {
-        console.log("Register invoked");
-        console.log({
-            firstName,
-            lastName,
-            email,
-            password
+    try {
+        const response = await fetch("http://localhost:5000/api/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                firstName,
+                lastName,
+                email,
+                password
+            })
         });
-    };
+
+        const data = await response.json();
+
+        if (response.ok) {
+            console.log("Registration successful:", data);
+            // Redirect or show success message if needed
+        } else {
+            console.error("Registration failed:", data.message || "Unknown error");
+        }
+    } catch (error) {
+        console.error("Error during registration:", error);
+    }
+};
+
 
     return (
         <div className="container mt-5">
