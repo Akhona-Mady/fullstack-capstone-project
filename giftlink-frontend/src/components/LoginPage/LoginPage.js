@@ -8,12 +8,32 @@ function LoginPage() {
 
     // Handle Login
     const handleLogin = async () => {
-        console.log("Inside handleLogin");
-        console.log({
-            email,
-            password
+    try {
+        const response = await fetch("http://localhost:5000/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer your-token-here" // Replace with actual token if needed
+            },
+            body: JSON.stringify({
+                email,
+                password
+            })
         });
-    };
+
+        const data = await response.json();
+
+        if (response.ok) {
+            console.log("Login successful:", data);
+            // Optionally store token: localStorage.setItem("token", data.token);
+        } else {
+            console.error("Login failed:", data.message || "Unknown error");
+        }
+    } catch (error) {
+        console.error("Error during login:", error);
+    }
+};
+
 
     return (
         <div className="container mt-5">
