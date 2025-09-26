@@ -1,36 +1,81 @@
 /* Style for image placeholder */
 .image-placeholder-large {
     /* Task 1 styling */
-    {{insert code here}}
+      width: 100%;
+    height: 400px;
+    position: relative;
+    background-color: #f0f0f0; /* light gray placeholder background */
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 /* Style for product image */
 .product-image-large {
     /* Task 2 styling */
-    {{insert code here}}
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures the image scales proportionally and fills */
+    border-radius: 8px;
 }
 
 /* Style for 'no image available' placeholder */
 .no-image-available-large {
     /* Task 3 styling */
-    {{insert code here}}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #ddd; /* darker placeholder when no image */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    border-radius: 8px;
 }
 
 /* Style for card header */
 .card-header {
     /* Task 4 styling */
-    {{insert code here}}
+    background-color: #007bff; /* Bootstrap primary color */
+    color: #fff;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 /* Style for details title */
 .details-title {
     /* Task 5 styling */
-    {{insert code here}}
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
 }
 
 /* Style for comments section */
 .comments-section {
     /* Task 6 styling */
-    {{insert code here}}
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.comments-section h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.comment-author {
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 600;
+}
+
+.comment-text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
 }
 
